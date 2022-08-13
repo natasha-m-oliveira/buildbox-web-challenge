@@ -75,6 +75,7 @@
 
     p {
       font-size: clamp(14px, 1.8rem, 2.2vw);
+      color: #9f9f9f;
       height: min-content;
       padding: 12px;
     }
@@ -96,7 +97,7 @@
 
     span:nth-child(2) {
       font-size: clamp(14px, 1.6rem, 2vw);
-      opacity: 0.8;
+      color: #7a7a7a;
     }
   }
 

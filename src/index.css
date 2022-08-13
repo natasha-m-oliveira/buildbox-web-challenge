@@ -101,7 +101,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.6;
 }
 ol,
 ul {
@@ -161,7 +161,7 @@ input,
 textarea {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(14px, 1.6rem, 2vw);
-  color: #787878;
+  color: #7a7a7a;
 }
 
 #root {

@@ -19,8 +19,8 @@
     color: #272626;
     cursor: default;
   }
-  &:active {
-    background-color: #7ece06;
+  &:not([disabled]):active {
+    background-color: #71bb00;
   }
 }
 
