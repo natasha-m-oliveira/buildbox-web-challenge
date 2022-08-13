@@ -1,17 +1,17 @@
-import { PostContext, usePostContext } from "common/context/Post";
-import React, { useContext } from "react";
-import Button from "../Button";
-import style from "./Form.module.scss";
+import { PostContext, usePostContext } from 'common/context/Post';
+import React, { useContext } from 'react';
+import Button from '../Button';
+import style from './Form.module.scss';
 
 function Form() {
   const { clearNewPost, addPost } = usePostContext();
   const { newPost, setNewPost } = useContext(PostContext);
 
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     addPost(newPost);
     clearNewPost();
+    e.currentTarget.reset();
   };
 
   const handleNewImage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,10 +43,10 @@ function Form() {
             src={
               newPost.image
                 ? newPost.image
-                : require("../../assets/img/no-image.png")
+                : require('../../assets/img/no-image.png')
             }
             alt="Clique para adicionar uma imagem"
-            className={newPost.image ? style.preview : ""}
+            className={newPost.image ? style.preview : ''}
           />
         </label>
       </div>

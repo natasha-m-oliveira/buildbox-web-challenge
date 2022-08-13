@@ -1,4 +1,4 @@
-import INewPost from "./newPost";
+import INewPost from './newPost';
 
 interface IPost extends INewPost {
   id: string;

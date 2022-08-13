@@ -1,18 +1,20 @@
-import {  usePostContext } from "common/context/Post";
-import IPost from "types/post";
-import style from "./Post.module.scss";
+import { usePostContext } from 'common/context/Post';
+import IPost from 'types/post';
+import style from './Post.module.scss';
 
 function Post({ image, message, author, id }: IPost) {
   const { removePost } = usePostContext();
   const handleClick = () => {
-    removePost({ image, message, author, id });
+    if (id) {
+      removePost({ image, message, author, id });
+    }
   };
   return (
-    <div className={`${style.post} ${ style.fadein}`}>
+    <div className={`${style.post} ${style.fadein}`}>
       <div className={style.close} onClick={handleClick}></div>
       <div className={style.imgWrapper}>
         <img
-          src={image ? image : require("../../../assets/img/no-image.png")}
+          src={image ? image : require('../../../assets/img/no-image.png')}
           alt="Imagem do Post"
         />
       </div>

@@ -1,17 +1,15 @@
-import { useState } from "react";
-import { useContext } from "react";
-import { createContext, ReactNode } from "react";
-import INewPost from "types/newPost";
-import IPost from "types/post";
-import { v4 as uuidv4 } from "uuid";
+import { useState } from 'react';
+import { useContext } from 'react';
+import { createContext, ReactNode } from 'react';
+import INewPost from 'types/newPost';
+import IPost from 'types/post';
+import { v4 as uuidv4 } from 'uuid';
 
 type PropsPostContext = {
   posts: IPost[];
   setPosts: (newPosts: IPost[]) => void;
   newPost: INewPost;
   setNewPost: (newPost: INewPost) => void;
-  active: boolean;
-  setActive: (newStatus: boolean) => void;
 };
 
 const DEFAULT_VALUE = {
@@ -19,12 +17,10 @@ const DEFAULT_VALUE = {
   setPosts: () => {},
   newPost: {
     image: null,
-    message: "",
-    author: "",
+    message: '',
+    author: '',
   },
   setNewPost: () => {},
-  active: true,
-  setActive: () => {},
 };
 
 export const PostContext = createContext<PropsPostContext>(DEFAULT_VALUE);
@@ -32,7 +28,6 @@ export const PostContext = createContext<PropsPostContext>(DEFAULT_VALUE);
 export const PostContextProvider = ({ children }: { children: ReactNode }) => {
   const [posts, setPosts] = useState<IPost[]>(DEFAULT_VALUE.posts);
   const [newPost, setNewPost] = useState<INewPost>(DEFAULT_VALUE.newPost);
-  const [active, setActive] = useState<boolean>(DEFAULT_VALUE.active);
   return (
     <PostContext.Provider
       value={{
@@ -40,8 +35,6 @@ export const PostContextProvider = ({ children }: { children: ReactNode }) => {
         setPosts,
         newPost,
         setNewPost,
-        active,
-        setActive
       }}
     >
       {children}
@@ -55,9 +48,9 @@ export const usePostContext = () => {
 
   const clearNewPost = () => {
     setNewPost({
-      message: "",
+      message: '',
       image: null,
-      author: "",
+      author: '',
     });
   };
 
@@ -79,6 +72,6 @@ export const usePostContext = () => {
   return {
     clearNewPost,
     addPost,
-    removePost
-  }
+    removePost,
+  };
 };

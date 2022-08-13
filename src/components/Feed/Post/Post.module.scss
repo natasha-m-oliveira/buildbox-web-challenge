@@ -1,134 +1,100 @@
 .post {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-template-rows: 1fr 60px;
-    grid-template-areas:
-        "img message"
-        "img author"
-    ;
-    position: relative;
-    background-color: #313131;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    width: 100%;
-    padding: 32px 0;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 1fr 60px;
+  grid-template-areas:
+    'img message'
+    'img author';
+  position: relative;
+  background-color: #313131;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  padding: 32px 0;
 
-    .close {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        width: 16px;
-        aspect-ratio: 1 / 1;
-        border: 1px solid tomato;
-        border-radius: 100vw;
-        cursor: pointer;
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 16px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid tomato;
+    border-radius: 100vw;
+    cursor: pointer;
 
-        &::before,
-        &::after {
-            position: absolute;
-            content: ' ';
-            height: 12px;
-            width: 1px;
-            background-color: tomato;
-        }
-
-        &::before {
-            transform: rotate(45deg);
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-        }
+    &::before,
+    &::after {
+      position: absolute;
+      content: ' ';
+      height: 12px;
+      width: 1px;
+      background-color: tomato;
     }
 
-    .imgWrapper {
-        grid-area: img;
-        align-self: center;
-        justify-self: center;
-        margin: 0 auto;
-
-        img {
-            display: block;
-            max-width: 80px;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 1.8vw;
-        }
+    &::before {
+      transform: rotate(45deg);
     }
 
-    .message {
-        display: flex;
-        align-items: center;
-        grid-area: message;
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
 
-        p {
-            font-size: clamp(14px, 1.8rem, 2.2vw);
-            height: min-content;
-            padding: 12px;
-        }
+  .imgWrapper {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      max-width: 80px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 1.8vw;
+    }
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    grid-area: message;
+
+    p {
+      font-size: clamp(14px, 1.8rem, 2.2vw);
+      height: min-content;
+      padding: 12px;
+    }
+  }
+
+  .author {
+    grid-area: author;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+
+    span:nth-child(1) {
+      font-size: clamp(12px, 1.3rem, 1.5vw);
+      font-weight: 700;
+      color: #5f5f5f;
     }
 
-    .author {
-        grid-area: author;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        padding: 12px;
-
-        span:nth-child(1) {
-            font-size: clamp(12px, 1.3rem, 1.5vw);
-            font-weight: 700;
-            color: #5F5F5F;
-        }
-
-        span:nth-child(2) {
-            font-size: clamp(14px, 1.6rem, 2vw);
-            opacity: 0.8;
-        }
+    span:nth-child(2) {
+      font-size: clamp(14px, 1.6rem, 2vw);
+      opacity: 0.8;
     }
+  }
 
-    @media screen and (min-width: 1280px) {
-        padding: 24px;
-        box-sizing: border-box;
-    }
+  @media screen and (min-width: 1280px) {
+    padding: 24px;
+    box-sizing: border-box;
+  }
 }
 
-.post+.post {
-    margin-top: 32px;
-}
-
-.post.fadein {
-    animation: fadein .3s forwards;
-}
-
-.post.fadeout {
-    animation: fadeout .3s forwards;
-}
-
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 30px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes fadeout {
-    from {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-    
-    to {
-        opacity: 0;
-        transform: translate3d(0, 30px, 0);
-    }
+.post + .post {
+  margin-top: 32px;
 }
