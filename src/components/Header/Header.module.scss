@@ -1,0 +1,23 @@
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2B2B2B;
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    z-index: 2;
+
+    h1 {
+        color: #6eb602;
+        font-weight: 900;
+        font-size: clamp(18px, 3rem, 3vw);
+    }
+
+    span {
+        font-weight: 300;
+        font-size: clamp(10px, 12rem, 0.9vw);
+    }
+}
