@@ -16,6 +16,7 @@ function Post({ image, message, author, id }: IPost) {
         <img
           src={image ? image : require('../../../assets/img/no-image.png')}
           alt="Imagem do Post"
+          className={image ? '' : style.noImage}
         />
       </div>
       <div className={style.message}>

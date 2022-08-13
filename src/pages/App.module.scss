@@ -1,7 +1,7 @@
 .AppStyle {
   display: grid;
-  grid-template-columns: 1fr clamp(300px, 60rem, 80vw) 1fr;
-  grid-template-rows: 100px min-content auto;
+  grid-template-columns: 1fr clamp(280px, 60rem, 80vw) 1fr;
+  grid-template-rows: clamp(60px, 10rem, 15vh) min-content auto;
   grid-template-areas:
     'header header header'
     '. new-post .'

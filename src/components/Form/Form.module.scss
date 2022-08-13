@@ -7,6 +7,7 @@
   width: 100%;
   padding: 12px;
   margin: 0 auto;
+  box-sizing: border-box;
   .inputWrapper {
     display: flex;
     flex-direction: column;
@@ -15,12 +16,11 @@
 
     textarea {
       resize: none;
-      width: 100% !important;
-      height: 9rem !important;
+      height: 10vh;
     }
 
     input {
-      height: 5rem;
+      height: 6vh;
     }
 
     input,
@@ -49,7 +49,7 @@
       width: 80px;
       aspect-ratio: 1 / 1;
       margin: 0 auto;
-      border-radius: 1.8vw;
+      border-radius: 1.8vmax;
 
       img {
         width: 24px;
@@ -85,6 +85,14 @@
     .inputWrapper {
       &:last-of-type {
         width: 40%;
+      }
+
+      input {
+        height: 7vh;
+      }
+
+      textarea {
+        height: 16vh;
       }
 
       input,
